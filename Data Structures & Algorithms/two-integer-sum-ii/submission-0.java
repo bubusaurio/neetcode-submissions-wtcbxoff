@@ -1,0 +1,25 @@
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+        int start = 0;
+        int end = numbers.length - 1;
+
+        while(start <= end){
+            int sum = numbers[start] + numbers[end];
+            if(sum == target){
+                break;
+            }
+
+            if(sum > target){
+                end--;
+            }
+
+            if(sum < target){
+                start++;
+            }        
+        }
+
+        int[] result = {start + 1, end + 1};
+
+        return result;
+    }
+}
